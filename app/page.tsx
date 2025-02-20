@@ -11,14 +11,12 @@ import Image from "next/image";
 
 export default function Home() {
     const [data, setData] = useState<[]>([]);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch('http://localhost:8080/getData')
             .then((response) => response.json())
             .then((data) => {
                 setData(data);
-                setLoading(false);
             });
     }, []);
 
