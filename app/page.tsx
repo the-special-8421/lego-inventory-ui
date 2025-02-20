@@ -5,6 +5,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
@@ -25,6 +26,7 @@ export default function Home() {
     return (
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
           <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+              <Button variant="text" onClick={() => fetch('http://localhost:8080/refreshInventory')}>Refresh Inventory</Button>
               <TableContainer component={Paper}>
                   <Table sx={{ minWidth: 650 }} aria-label="simple table">
                       <TableHead>
